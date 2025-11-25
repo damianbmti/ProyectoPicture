@@ -1,0 +1,33 @@
+<%- include("templates/encabezado.ejs", { titulo: "Mi Perfil" }) %>
+
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card p-4">
+      <h3>Perfil de usuario</h3>
+
+      <div class="text-center mb-3">
+        <% if (usuario && usuario.foto) { %>
+          <img src="/uploads/<%= usuario.foto %>" alt="Foto de perfil" style="max-width: 200px; border-radius: 6px;" />
+        <% } else { %>
+          <div style="width:200px; height:200px; background:#ddd; display:flex;align-items:center;justify-content:center; border-radius:6px;">
+            <strong>Sin foto</strong>
+          </div>
+        <% } %>
+      </div>
+
+      <p><strong>Email:</strong> <%= usuario.email %></p>
+      <p><strong>Rol:</strong> <%= usuario.rol %></p>
+
+      <div class="d-flex gap-2">
+        <a href="/perfil/editar" class="btn btn-primary">Editar perfil</a>
+
+        <form action="/perfil/borrar" method="POST" onsubmit="return confirm('¿Seguro que desea borrar su cuenta? Esta acción no se puede deshacer.')">
+          <button type="submit" class="btn btn-danger">Borrar cuenta</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<%- include("templates/pie.ejs") %>

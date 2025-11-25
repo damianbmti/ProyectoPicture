@@ -1,0 +1,71 @@
+<%- include("templates/encabezado.ejs", { titulo: "Crear Cuenta" }) %>
+
+<div class="row">
+<div class="col-md-6 offset-md-3">
+
+<div class="p-4 rounded-3" style="background-color: var(--steam-dark-blue); border: 1px solid var(--steam-medium-blue);">
+  
+  <form action="/registro" method="POST" enctype="multipart/form-data">
+    
+    <div class="mb-3">
+      <label for="email" class="form-label">Correo Electrónico</label>
+      <input 
+        type="email" 
+        class="form-control" 
+        id="email" 
+        name="email" 
+        placeholder="tu@correo.com" 
+        required
+      >
+    </div>
+    
+    <div class="mb-3">
+      <label for="password" class="form-label">Contraseña</label>
+      <input 
+        type="password" 
+        class="form-control" 
+        id="password" 
+        name="password" 
+        placeholder="Crea una contraseña segura"
+        required
+      >
+    </div>
+
+     <div class="mb-3">
+      <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+      <input 
+        type="password" 
+        class="form-control" 
+        id="confirmPassword" 
+        name="confirmPassword" 
+        placeholder="Vuelve a escribir la contraseña"
+        required
+      >
+    </div>
+
+    <div class="mb-3">
+      <label for="foto" class="form-label">Foto de perfil (opcional)</label>
+      <input type="file" class="form-control" id="foto" name="foto" accept="image/*">
+    </div>
+
+    
+    <button type="submit" class="btn btn-primary w-100">
+      Crear Cuenta
+    </button>
+    
+  </form>
+  
+  <div class="text-center mt-3">
+    <p class="mb-0">
+      ¿Ya tienes una cuenta? 
+      <a href="/login" style="color: var(--steam-light-blue);">Inicia sesión aquí</a>
+    </p>
+  </div>
+  
+</div>
+
+
+</div>
+</div>
+
+<%- include("templates/pie.ejs") %>

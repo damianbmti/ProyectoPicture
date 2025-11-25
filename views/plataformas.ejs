@@ -1,0 +1,27 @@
+<%- include("templates/encabezado.ejs", { titulo: "Gestionar Plataformas" }) %>
+
+<div class="row">
+  <div class="col-md-5">
+    <h5>Agregar Nueva Plataforma</h5>
+    <form action="/plataformas" method="POST">
+      <label>Nombre</label>
+      <input class="form-control mb-3" type="text" name="nombre" id="nombre" placeholder="Ej: PC, PlayStation 5" required>
+      <button type="submit" class="btn btn-primary">Guardar Plataforma</button>
+    </form>
+  </div>
+
+  <div class="col-md-7">
+    <h5>Plataformas Existentes</h5>
+    <% if (plataformasBD.length === 0) { %>
+      <p>Aún no hay plataformas. ¡Agrega una!</p>
+    <% } else { %>
+      <ul class="list-group">
+        <% plataformasBD.forEach(plat => { %>
+          <li class="list-group-item"><%= plat.nombre %></li>
+        <% }) %>
+      </ul>
+    <% } %>
+  </div>
+</div>
+
+<%- include("templates/pie.ejs") %>

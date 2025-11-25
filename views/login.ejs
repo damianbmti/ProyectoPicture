@@ -1,0 +1,52 @@
+<%- include("templates/encabezado.ejs", { titulo: "Iniciar Sesión" }) %>
+
+<div class="row">
+<div class="col-md-6 offset-md-3">
+<div class="p-4 rounded-3" style="background-color: var(--steam-dark-blue); border: 1px solid var(--steam-medium-blue);">
+
+  <form action="/login" method="POST">
+    
+    <div class="mb-3">
+      <label for="email" class="form-label">Correo Electrónico</label>
+      <input 
+        type="email" 
+        class="form-control" 
+        id="email" 
+        name="email" 
+        placeholder="tu@correo.com" 
+        required
+      >
+    </div>
+    
+    <div class="mb-3">
+      <label for="password" class="form-label">Contraseña</label>
+      <input 
+        type="password" 
+        class="form-control" 
+        id="password" 
+        name="password" 
+        placeholder="Tu contraseña"
+        required
+      >
+    </div>
+    
+    <button type="submit" class="btn btn-primary w-100">
+      Iniciar Sesión
+    </button>
+    
+  </form>
+  
+  <div class="text-center mt-3">
+    <p class="mb-0">
+      ¿No tienes una cuenta? 
+      <a href="/registro" style="color: var(--steam-light-blue);">Regístrate aquí</a>
+    </p>
+  </div>
+  
+</div>
+
+
+</div>
+</div>
+
+<%- include("templates/pie.ejs") %>

@@ -1,0 +1,24 @@
+<%- include("templates/encabezado.ejs", { titulo: "Agregar Nuevo Juego" }) %>
+
+<form action="/agregarJuego" id="formulario" method="POST">
+
+	<label>Título</label>
+	<input class="form-control mb-3" type="text" name="titulo" id="titulo" placeholder="Título del juego" required>
+
+	<label>Año</label>
+	<input class="form-control mb-3" type="number" name="ano" id="ano" placeholder="Año de publicación" required>
+
+	<label>Género</label>
+	<input class="form-control mb-3" type="text" name="genero" id="genero" placeholder="Ej: RPG, Acción">
+
+	<label>Plataforma</label>
+	<select class="form-control mb-3" name="plataforma" id="plataforma" required>
+	  <option value="" disabled selected>-- Elige una plataforma --</option>
+	  <% plataformasBD.forEach(plat => { %>
+	    <option value="<%= plat._id %>"><%= plat.nombre %></option>
+	  <% }) %>
+	</select>
+
+	<button type="submit" class="btn btn-primary">Guardar Juego</button>
+</form>
+<%- include("templates/pie.ejs") %>

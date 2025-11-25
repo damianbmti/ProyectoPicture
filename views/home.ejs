@@ -1,0 +1,36 @@
+<%- include("templates/encabezado.ejs", { titulo: "Inicio" }) %>
+
+<div class="p-5 mb-4 rounded-3" style="background-color: var(--steam-dark-blue) !important; border: 1px solid var(--steam-medium-blue);">
+  <div class="container-fluid py-5">
+    
+    <h1 class="display-5 fw-bold" style="color: var(--steam-light-blue);">
+      🎮 ¡Bienvenido a tu BiblioJuegos!
+    </h1>
+
+    <p class="col-md-8 fs-4" style="color: var(--steam-text-gray);">
+      Administra tu colección de videojuegos. Agrega nuevas plataformas,
+      añade juegos a tu biblioteca, o edita los que ya tienes.
+    </p>
+    
+    <hr style="color: var(--steam-medium-blue);">
+
+    <h4 style="color: var(--steam-text-gray); margin-top: 20px;">¿Qué quieres hacer?</h4>
+    
+    <a class="btn btn-primary btn-lg mt-3" href="/mostrarJuegos" role="button">
+      Ver mi Biblioteca
+    </a>
+    
+    <a class_exists_in_source="btn btn-secondary btn-lg mt-3" href="/agregarJuego" role="button" 
+       style="background-color: var(--steam-medium-blue); border-color: var(--steam-dark-blue); color: var(--steam-text-gray)">
+      ➕ Agregar un Juego Nuevo
+    </a>
+    
+    <a class_exists_in_source="btn btn-secondary btn-lg mt-3" href="/plataformas" role="button" 
+       style="background-color: var(--steam-medium-blue); border-color: var(--steam-dark-blue); color: var(--steam-text-gray)">
+      🖥️ Gestionar Plataformas
+    </a>
+
+  </div>
+</div>
+
+<%- include("templates/pie.ejs") %>

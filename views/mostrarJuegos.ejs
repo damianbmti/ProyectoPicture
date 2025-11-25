@@ -1,0 +1,34 @@
+<%- include("templates/encabezado.ejs", { titulo: "Mi Biblioteca de Videojuegos" }) %>
+
+<table class="table table-dark table-striped table-hover">
+  <thead class="table-dark"> <tr>
+      <th>Título</th>
+      <th>Año</th>
+      <th>Género</th>
+      <th>Plataforma</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% juegosBD.forEach(juego => { %> 
+    <tr>
+      <td><%= juego.titulo %></td>
+      <td><%= juego.ano %></td>
+      <td><%= juego.genero %></td>
+      <td>
+        <% if (juego.plataforma) { %>
+          <%= juego.plataforma.nombre %>
+        <% } else { %>
+          <span class="text-danger">N/A</span>
+        <% } %>
+      </td>
+      <td>
+        <a href = "/editar/<%= juego._id %>" class="btn btn-warning btn-sm"> Editar </a>
+        <a href = "/borrar/<%= juego._id %>" class="btn btn-danger btn-sm"> Borrar </a>
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<%- include("templates/pie.ejs") %>

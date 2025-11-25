@@ -1,0 +1,13 @@
+<%- include("templates/encabezado.ejs", { titulo: "Respuestas" }) %>
+
+<div class="container mt-4">
+  <h2>Respuestas</h2>
+  <p>Los datos del formulario son:</p>
+
+  <div class="alert alert-success" role="alert">
+    Nombre: <strong><%= nombre %></strong><br>
+    Edad: <strong><%= edad %></strong>
+  </div>
+</div>
+
+<%- include("templates/pie.ejs") %>

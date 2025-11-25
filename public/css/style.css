@@ -1,0 +1,104 @@
+:root {
+  --steam-dark-blue: #1b2838;
+  --steam-darker-blue: #171d25;
+  --steam-medium-blue: #2a475e;
+  --steam-light-blue: #66c0f4;
+  --steam-text-gray: #c7d5e0;
+  --steam-text-white: #ffffff;
+}
+
+/* Fondo principal y color de texto */
+body {
+  background-color: var(--steam-darker-blue);
+  color: var(--steam-text-gray);
+}
+
+/* Barra de navegación */
+.navbar {
+  background-color: var(--steam-dark-blue) !important;
+  border-bottom: 1px solid var(--steam-medium-blue);
+}
+
+.navbar-brand, .nav-link {
+  color: var(--steam-text-gray) !important;
+}
+
+.nav-link:hover, .navbar-brand:hover {
+  color: var(--steam-light-blue) !important;
+}
+
+/* Títulos principales */
+h1.text-primary {
+  color: var(--steam-light-blue) !important;
+  border-bottom: 2px solid var(--steam-medium-blue);
+  padding-bottom: 10px;
+}
+
+.table-dark {
+  --bs-table-bg: var(--steam-dark-blue);
+  --bs-table-striped-bg: var(--steam-medium-blue);
+  --bs-table-border-color: var(--steam-medium-blue);
+  --bs-table-color: var(--steam-text-gray);
+}
+
+.table-dark thead th {
+  background-color: var(--steam-medium-blue);
+  color: var(--steam-light-blue);
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+/* Formularios (Inputs, Selects, Labels) */
+.form-control, .form-select {
+  background-color: var(--steam-medium-blue);
+  color: var(--steam-text-white);
+  border: 1px solid var(--steam-dark-blue);
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: var(--steam-medium-blue);
+  color: var(--steam-text-white);
+  border-color: var(--steam-light-blue);
+  box-shadow: 0 0 0 0.25rem rgba(102, 192, 244, 0.25);
+}
+
+.form-control::placeholder {
+  color: var(--steam-text-gray);
+  opacity: 0.7;
+}
+
+label {
+  color: var(--steam-light-blue);
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Botones */
+.btn-primary {
+  background: linear-gradient(to bottom, #66c0f4 5%, #4a95c2 95%);
+  color: var(--steam-text-white);
+  border: 1px solid var(--steam-dark-blue);
+  font-weight: bold;
+}
+.btn-primary:hover {
+  background: linear-gradient(to bottom, #77d1ff 5%, #5aa6d3 95%);
+  color: var(--steam-text-white);
+  border: 1px solid var(--steam-medium-blue);
+}
+
+/* Botones de Editar y Borrar en la tabla */
+.btn-warning, .btn-danger {
+  background-color: var(--steam-medium-blue);
+  border-color: var(--steam-dark-blue);
+  color: var(--steam-text-gray);
+}
+.btn-warning:hover {
+  background-color: var(--steam-light-blue);
+  border-color: var(--steam-light-blue);
+  color: var(--steam-darker-blue);
+}
+.btn-danger:hover {
+  background-color: #c24a4a;
+  border-color: #c24a4a;
+  color: var(--steam-text-white);
+}
